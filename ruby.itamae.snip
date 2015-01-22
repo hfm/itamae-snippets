@@ -1,0 +1,127 @@
+# Itamae
+# https://github.com/itamae-kitchen/itamae/wiki
+
+# https://github.com/itamae-kitchen/itamae/wiki/Definitions
+snippet define
+    define :${1:define_name} do
+      ${3:resource} params[:name] do
+        ${4:attributes}
+      end
+    end
+
+# Including Recipes https://github.com/itamae-kitchen/itamae/wiki/Including-Recipes
+snippet include_recipe
+    include_recipe '${1:/path/to/recipe.rb}'
+
+## Resources directory https://github.com/itamae-kitchen/itamae/wiki/Resources-directory
+snippet directory
+    directory "${1:/path/to/directory}"
+
+snippet directory_do
+    directory "${1:/path/to/directory}" do
+      action :${2:create}
+    end
+
+## Resources execute https://github.com/itamae-kitchen/itamae/wiki/Resources-execute
+snippet execute
+    execute "${1:command}"
+
+snippet execute_do
+    execute "${1:name}" do
+      command "${2:$1}"
+    end
+
+snippet execute_do_conditional
+    execute "${1:name}" do
+      command "${2:$1}"
+      not_if "${3:conditional}"
+    end
+
+## Resources file https://github.com/ryotarai/itamae/wiki/Resources-file
+snippet file
+    file "${1:/path/to/file}" do
+      action :${2:action}
+    end
+
+snippet file_content
+    file "${1:/path/to/file}" do
+      content "${2:content}"
+    end
+
+snippet file_content_with_notifies
+    file "${1:/path/to/file}" do
+      content "${2:content}"
+      notifies :${3:action}, "${4:file[/path/to/never_exist]}"
+    end
+
+## Resources git https://github.com/ryotarai/itamae/wiki/Resources-git
+snippet git
+    git "${1:/path/to/directory}" do
+      repository "${2:repository}"
+    end
+
+snippet git_with_revision
+    git "${1:/path/to/directory}" do
+      repository "${2:repository}"
+      revision "${3:revision}"
+    end
+
+## Resources local_ruby_block https://github.com/itamae-kitchen/itamae/wiki/Resources-local_ruby_block
+snippet local_ruby_block
+    local_ruby_block "${1:name}" do
+      block do
+        ${2:code}
+      end
+    end
+
+## Resources package https://github.com/itamae-kitchen/itamae/wiki/Resources-package
+snippet package
+    package "${1:package}"
+
+snippet package_with_action
+    package "${1:package}" do
+      action :${2:action}
+    end
+
+snippet package_with_option
+    package "${1:package}" do
+      options "${2:option}"
+    end
+
+snippet package_with_action_and_option
+    package "${1:package}" do
+      action :${2:action}
+      options "${2:option}"
+    end
+
+## Resources remote_file https://github.com/itamae-kitchen/itamae/wiki/Resources-remote_file
+snippet remote_file
+    remote_file "${1:/path/to/file}" do
+      source "${2:/path/to/source}"
+    end
+
+## Resources service https://github.com/itamae-kitchen/itamae/wiki/Resources-service
+snippet service
+    service "${1:service}" do
+      action :${2:start}
+    end
+
+snippet service_enable_and_start
+    service "${1:service}" do
+      action [:${2:enable}, :${3:start}]
+    end
+
+## Resources template https://github.com/itamae-kitchen/itamae/wiki/Resources-template
+snippet template
+    template "${1:/path/to/file}" do
+      source "${2:/path/to/source}"
+      variables(${3:key}: "${4:value}")
+    end
+
+## Resources user https://github.com/itamae-kitchen/itamae/wiki/Resources-user
+snippet user
+    user "${1:name}" do
+      uid      ${2:uid}
+      username "${3:$1}"
+      password "${4:password}"
+    end
