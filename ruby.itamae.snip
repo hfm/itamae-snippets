@@ -54,6 +54,12 @@ snippet file_content_with_notifies
       notifies :${3:action}, "${4:file[/path/to/never_exist]}"
     end
 
+## Resources link
+snippet link
+    link "${1:/path/to/target}" do
+      to "{2:/path/to/file}"
+    end
+
 ## Resources git https://github.com/ryotarai/itamae/wiki/Resources-git
 snippet git
     git "${1:/path/to/directory}" do
