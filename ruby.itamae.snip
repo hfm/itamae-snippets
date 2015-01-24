@@ -13,6 +13,20 @@ snippet define
 snippet include_recipe
     include_recipe '${1:/path/to/recipe.rb}'
 
+# Resources
+## Common Attributes https://github.com/itamae-kitchen/itamae/wiki/Resources
+snippet action
+    action :${1:action}
+
+snippet only_if
+    only_if "${1:command}"
+
+snippet not_if
+    not_if "${1:command}"
+
+snippet user
+    user "${1:username}"
+
 ## Resources directory https://github.com/itamae-kitchen/itamae/wiki/Resources-directory
 snippet directory
     directory "${1:/path/to/directory}"
