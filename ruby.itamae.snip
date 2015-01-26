@@ -9,6 +9,13 @@ snippet define
       end
     end
 
+# notifies
+snippet notifies
+    notifies :${1:action}, "${2:resource}"
+
+snippet notifies_immediately
+    notifies :${1:action}, "${2:resource}", :immediately
+
 # Including Recipes https://github.com/itamae-kitchen/itamae/wiki/Including-Recipes
 snippet include_recipe
     include_recipe '${1:/path/to/recipe.rb}'
