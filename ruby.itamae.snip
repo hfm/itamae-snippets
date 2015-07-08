@@ -145,12 +145,13 @@ snippet remote_file
 # https://github.com/itamae-kitchen/itamae/wiki/service-resource
 snippet service
     service "${1:service}" do
-      action :${2:start}
+      action [:${2:enable}, :${3:start}]
     end
 
-snippet service_enable_and_start
+snippet service_with_provider
     service "${1:service}" do
       action [:${2:enable}, :${3:start}]
+      provider "${4:provider}"
     end
 
 # https://github.com/itamae-kitchen/itamae/wiki/template-resource
