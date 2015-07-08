@@ -41,6 +41,9 @@ snippet directory
 snippet directory_do
     directory "${1:/path/to/directory}" do
       action :${2:create}
+      mode   '${3:0644}'
+      owner  '${4:root}'
+      group  '${5:root}'
     end
 
 ## Resources execute https://github.com/itamae-kitchen/itamae/wiki/Resources-execute
