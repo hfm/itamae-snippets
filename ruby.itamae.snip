@@ -137,6 +137,9 @@ snippet package_do
 snippet remote_file
     remote_file "${1:/path/to/file}" do
       source "${2:/path/to/source}"
+      mode   "${3:0644}"
+      owner  "${4:root}"
+      group  "${5:root}"
     end
 
 # https://github.com/itamae-kitchen/itamae/wiki/service-resource
