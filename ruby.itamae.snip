@@ -20,8 +20,7 @@ snippet notifies_immediately
 snippet include_recipe
     include_recipe "${1:/path/to/recipe.rb}"
 
-# Resources https://github.com/itamae-kitchen/itamae/wiki/Resources
-## Common Attributes https://github.com/itamae-kitchen/itamae/wiki/Resources#common-attributes
+# https://github.com/itamae-kitchen/itamae/wiki/Resources#common-attributes
 snippet action
     action :${1:action}
 
@@ -34,7 +33,7 @@ snippet not_if
 snippet user
     user "${1:username}"
 
-## Resources directory https://github.com/itamae-kitchen/itamae/wiki/Resources-directory
+# https://github.com/ryotarai/itamae/wiki/directory-resource
 snippet directory
     directory "${1:/path/to/directory}"
 
@@ -45,7 +44,7 @@ snippet directory_do
       group  '${4:root}'
     end
 
-## Resources execute https://github.com/itamae-kitchen/itamae/wiki/Resources-execute
+# https://github.com/ryotarai/itamae/wiki/execute-resource
 snippet execute
     execute "${1:command}"
 
@@ -55,7 +54,7 @@ snippet execute_do
       cwd     "${3:/path/to/dir}"
     end
 
-## Resources file https://github.com/ryotarai/itamae/wiki/Resources-file
+# https://github.com/itamae-kitchen/itamae/wiki/file-resource
 snippet file
     file "${1:/path/to/file}"
 
@@ -86,7 +85,7 @@ snippet link
       to "${2:/path/to/file}"
     end
 
-## Resources git https://github.com/ryotarai/itamae/wiki/Resources-git
+# https://github.com/ryotarai/itamae/wiki/git-resource
 snippet git
     git "${1:/path/to/directory}" do
       repository "${2:repository}"
@@ -106,7 +105,7 @@ snippet local_ruby_block
       end
     end
 
-## Resources package https://github.com/itamae-kitchen/itamae/wiki/Resources-package
+# https://github.com/itamae-kitchen/itamae/wiki/package-resource
 snippet package
     package "${1:package}"
 
@@ -132,7 +131,7 @@ snippet remote_file
       source "${2:/path/to/source}"
     end
 
-## Resources service https://github.com/itamae-kitchen/itamae/wiki/Resources-service
+# https://github.com/itamae-kitchen/itamae/wiki/service-resource
 snippet service
     service "${1:service}" do
       action :${2:start}
@@ -143,14 +142,14 @@ snippet service_enable_and_start
       action [:${2:enable}, :${3:start}]
     end
 
-## Resources template https://github.com/itamae-kitchen/itamae/wiki/Resources-template
+# https://github.com/itamae-kitchen/itamae/wiki/template-resource
 snippet template
     template "${1:/path/to/file}" do
       source "${2:/path/to/source}"
       variables(${3:key}: "${4:value}")
     end
 
-## Resources user https://github.com/itamae-kitchen/itamae/wiki/Resources-user
+# https://github.com/itamae-kitchen/itamae/wiki/user-resource
 snippet user
     user "${1:name}" do
       uid      ${2:uid}
