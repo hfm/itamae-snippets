@@ -53,12 +53,7 @@ snippet execute
 snippet execute_do
     execute "${1:name}" do
       command "${2:$1}"
-    end
-
-snippet execute_do_conditional
-    execute "${1:name}" do
-      command "${2:$1}"
-      not_if "${3:conditional}"
+      cwd     "${3:/path/to/dir}"
     end
 
 ## Resources file https://github.com/ryotarai/itamae/wiki/Resources-file
