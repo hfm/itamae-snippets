@@ -61,7 +61,9 @@ snippet file
 
 snippet file_do
     file "${1:/path/to/file}" do
-      action :${2:action}
+      mode   '${2:0644}'
+      owner  '${3:root}'
+      group  '${4:root}'
     end
 
 snippet file_content
