@@ -39,9 +39,9 @@ snippet directory
 
 snippet directory_do
     directory "${1:/path/to/directory}" do
-      mode   '${2:0644}'
-      owner  '${3:root}'
-      group  '${4:root}'
+      mode   "${2:0644}"
+      owner  "${3:root}"
+      group  "${4:root}"
     end
 
 # https://github.com/ryotarai/itamae/wiki/execute-resource
@@ -60,17 +60,17 @@ snippet file
 
 snippet file_do
     file "${1:/path/to/file}" do
-      mode   '${2:0644}'
-      owner  '${3:root}'
-      group  '${4:root}'
+      mode   "${2:0644}"
+      owner  "${3:root}"
+      group  "${4:root}"
     end
 
 snippet file_content
     file "${1:/path/to/file}" do
       content "${2:content}"
-      mode   '${3:0644}'
-      owner  '${4:root}'
-      group  '${5:root}'
+      mode   "${3:0644}"
+      owner  "${4:root}"
+      group  "${5:root}"
     end
 
 snippet file_content_with_notifies
