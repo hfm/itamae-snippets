@@ -79,10 +79,13 @@ snippet file_content_with_notifies
       notifies :${3:action}, "${4:file[/path/to/never_exist]}"
     end
 
-## Resources link
-snippet link
-    link "${1:/path/to/target}" do
-      to "${2:/path/to/file}"
+# https://github.com/ryotarai/itamae/wiki/gem_package-resource
+snippet gem_package
+    gem_package "${1:gem}"
+
+snippet gem_package_do
+    gem_package "${1:gem}" do
+      version "${2:version}"
     end
 
 # https://github.com/ryotarai/itamae/wiki/git-resource
@@ -94,10 +97,25 @@ snippet git
 snippet git_with_revision
     git "${1:/path/to/directory}" do
       repository "${2:repository}"
-      revision "${3:revision}"
+      revision   "${3:revision}"
     end
 
-## Resources local_ruby_block https://github.com/itamae-kitchen/itamae/wiki/Resources-local_ruby_block
+# https://github.com/itamae-kitchen/itamae/wiki/group-resource
+snippet group
+    group "${1:group}"
+
+snippet group_do
+    group "${1:group}" do
+      gid ${2:gid}
+    end
+
+# https://github.com/ryotarai/itamae/wiki/link-resource
+snippet link
+    link "${1:/path/to/target}" do
+      to "${2:/path/to/file}"
+    end
+
+# https://github.com/itamae-kitchen/itamae/wiki/local_ruby_block-resource
 snippet local_ruby_block
     local_ruby_block "${1:name}" do
       block do
