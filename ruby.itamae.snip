@@ -159,12 +159,17 @@ snippet template
     template "${1:/path/to/file}" do
       source "${2:/path/to/source}"
       variables(${3:key}: "${4:value}")
+      mode   "${3:0644}"
+      owner  "${4:root}"
+      group  "${5:root}"
     end
 
 # https://github.com/itamae-kitchen/itamae/wiki/user-resource
 snippet user
     user "${1:name}" do
-      uid      ${2:uid}
-      username "${3:$1}"
-      password "${4:password}"
+      uid         ${2:uid}
+      gid         ${3:gid}
+      system_user ${4:true}
+      create_home ${5:true}
+      shell       "${6:/bin/bash}"
     end
