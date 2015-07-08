@@ -57,6 +57,9 @@ snippet execute_do
 
 ## Resources file https://github.com/ryotarai/itamae/wiki/Resources-file
 snippet file
+    file "${1:/path/to/file}"
+
+snippet file_do
     file "${1:/path/to/file}" do
       action :${2:action}
     end
