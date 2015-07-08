@@ -127,23 +127,13 @@ snippet local_ruby_block
 snippet package
     package "${1:package}"
 
-snippet package_with_action
+snippet package_do
     package "${1:package}" do
-      action :${2:action}
+      version ":${2:version}"
+      options ":${2:options}"
     end
 
-snippet package_with_option
-    package "${1:package}" do
-      options "${2:option}"
-    end
-
-snippet package_with_action_and_option
-    package "${1:package}" do
-      action :${2:action}
-      options "${2:option}"
-    end
-
-## Resources remote_file https://github.com/itamae-kitchen/itamae/wiki/Resources-remote_file
+# https://github.com/itamae-kitchen/itamae/wiki/remote_directory-resource
 snippet remote_file
     remote_file "${1:/path/to/file}" do
       source "${2:/path/to/source}"
