@@ -169,7 +169,6 @@ snippet user_resource
     user "${1:name}" do
       uid         ${2:uid}
       gid         ${3:gid}
-      system_user ${4:true}
-      create_home ${5:true}
-      shell       "${6:/bin/bash}"
+      create_home ${4:true}
+      shell       "${5:/bin/bash}"
     end
