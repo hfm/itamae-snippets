@@ -172,3 +172,19 @@ snippet user_resource
       create_home ${4:true}
       shell       "${5:/bin/bash}"
     end
+
+###
+
+snippet user_and group
+    group "${1:group}" do
+      gid ${2:gid}
+    end
+
+    user "${3:$1}" do
+      uid         ${4:$2}
+      gid         ${5:$2}
+      system_user ${6:true}
+      create_home ${7:true}
+      home        "/home/${6:$3}"
+      shell       "${7:/bin/bash}"
+    end
