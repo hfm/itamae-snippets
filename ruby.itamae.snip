@@ -173,6 +173,16 @@ snippet user_resource
       shell       "${5:/bin/bash}"
     end
 
+snippet user_resource_full
+    user "${1:name}" do
+      uid         ${2:uid}
+      gid         ${3:gid}
+      system_user ${4:true}
+      create_home ${5:true}
+      home        "/home/${6:$1}"
+      shell       "${7:/bin/bash}"
+    end
+
 ###
 
 snippet user_and group
